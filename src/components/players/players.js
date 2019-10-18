@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
-const Team = () => {
+const Players = (props) => {
     const [players, setPlayers] = useState([]);
 
     useEffect(() => {
         let players = [
+            { "id": 1, "email": "george.bluth@reqres.in", "first_name": "George", "last_name": "Bluth", "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg" },
+            { "id": 2, "email": "janet.weaver@reqres.in", "first_name": "Janet", "last_name": "Weaver", "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg" },
+            { "id": 3, "email": "emma.wong@reqres.in", "first_name": "Emma", "last_name": "Wong", "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg" },
+            { "id": 4, "email": "eve.holt@reqres.in", "first_name": "Eve", "last_name": "Holt", "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg" },
+            { "id": 5, "email": "charles.morris@reqres.in", "first_name": "Charles", "last_name": "Morris", "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg" },
+            { "id": 6, "email": "tracey.ramos@reqres.in", "first_name": "Tracey", "last_name": "Ramos", "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg" },
             { "id": 7, "email": "michael.lawson@reqres.in", "first_name": "Michael", "last_name": "Lawson", "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg", "facebook_link": "https://facebook.com" },
             { "id": 8, "email": "lindsay.ferguson@reqres.in", "first_name": "Lindsay", "last_name": "Ferguson", "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/araa3185/128.jpg", "twitter_link": "https://twitter.com" },
             { "id": 9, "email": "tobias.funke@reqres.in", "first_name": "Tobias", "last_name": "Funke", "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/vivekprvr/128.jpg" },
@@ -29,7 +34,7 @@ const Team = () => {
                 </div>
                 <div className="row">
                     {players.map(player =>
-                        <div key={player.id} className="col-sm-6 col-md-6 col-lg-4">
+                        <div onClick={() => props.history.push(`/players/${player.id}`)} key={player.id} className="col-sm-6 col-md-6 col-lg-4">
                             <div className="team-item wow fadeInUp" data-wow-delay="0.2s">
                                 <div className="team-img">
                                     <img className="img-fluid" style={{ height: 333 }} src={player.avatar} alt={player.first_name} />
@@ -52,10 +57,9 @@ const Team = () => {
                         </div>
                     )}
                 </div>
-                <Link to='/players' className="btn btn-common mt-30 wow fadeInUp" data-wow-delay="1.9s">All Players</Link>
             </div>
         </section>
     );
 }
 
-export default Team;
+export default Players;
