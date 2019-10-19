@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const GoToTop = () => {
     return (
-        <a href="#" className="back-to-top">
+        <Link to='/' className="back-to-top">
             <i className="lni-chevron-up"></i>
-        </a>
+        </Link>
     );
 }
 

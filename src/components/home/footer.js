@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -14,11 +15,11 @@ const Footer = () => {
                     <div className="col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.4s">
                         <h3>QUICK LINKS</h3>
                         <ul>
-                            <li><a href="#">About Conference</a></li>
-                            <li><a href="#">Our Speakers</a></li>
-                            <li><a href="#">Event Shedule</a></li>
-                            <li><a href="#">Latest News</a></li>
-                            <li><a href="#">Event Photo Gallery</a></li>
+                            <li><Link to="/">About Conference</Link></li>
+                            <li><Link to="/">Our Speakers</Link></li>
+                            <li><Link to="/">Event Shedule</Link></li>
+                            <li><Link to="/">Latest News</Link></li>
+                            <li><Link to="/">Event Photo Gallery</Link></li>
                         </ul>
                     </div>
                     <div className="col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.6s">
@@ -29,7 +30,7 @@ const Footer = () => {
                                     <img className="img-fluid" src="assets/img/art/a1.jpg" alt="" />
                                 </figure>
                                 <div className="post-content">
-                                    <h6 className="post-title"> <a href="blog-single.html">Lorem ipsm dolor sumit.</a> </h6>
+                                    <h6 className="post-title"> <Link to="/">Lorem ipsm dolor sumit.</Link> </h6>
                                     <div className="meta"><span className="date">October 12, 2018</span></div>
                                 </div>
                             </li>
@@ -38,7 +39,7 @@ const Footer = () => {
                                     <img className="img-fluid" src="assets/img/art/a2.jpg" alt="" />
                                 </figure>
                                 <div className="post-content">
-                                    <h6 className="post-title"><a href="blog-single.html">Lorem ipsm dolor sumit.</a></h6>
+                                    <h6 className="post-title"><Link to="/">Lorem ipsm dolor sumit.</Link></h6>
                                     <div className="meta"><span className="date">October 12, 2018</span></div>
                                 </div>
                             </li>
@@ -61,10 +62,10 @@ const Footer = () => {
                         <div className="widget">
                             <h5 className="widget-title">FOLLOW US ON</h5>
                             <ul className="footer-social">
-                                <li><a className="facebook" href="#"><i className="lni-facebook-filled"></i></a></li>
-                                <li><a className="twitter" href="#"><i className="lni-twitter-filled"></i></a></li>
-                                <li><a className="linkedin" href="#"><i className="lni-linkedin-filled"></i></a></li>
-                                <li><a className="google-plus" href="#"><i className="lni-google-plus"></i></a></li>
+                                <li><Link to='/' className="facebook"><i className="lni-facebook-filled"></i></Link></li>
+                                <li><Link to='/' className="twitter"><i className="lni-twitter-filled"></i></Link></li>
+                                <li><Link to='/' className="linkedin"><i className="lni-linkedin-filled"></i></Link></li>
+                                <li><Link to='/' className="google-plus"><i className="lni-google-plus"></i></Link></li>
                             </ul>
                         </div>
                     </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Sponsors = () => {
     return (
@@ -15,26 +16,26 @@ const Sponsors = () => {
                 <div className="row mb-30 text-center wow fadeInDown" data-wow-delay="0.3s">
                     <div className="col-md-3 col-sm-3 col-xs-12">
                         <div className="spnsors-logo">
-                            <a><img className="img-fluid" src="assets/img/sponsors/logo-01.png" alt="" /></a>
+                            <Link to='/'><img className="img-fluid" src="assets/img/sponsors/logo-01.png" alt="" /></Link>
                         </div>
                     </div>
                     <div className="col-md-3 col-sm-3 col-xs-12">
                         <div className="spnsors-logo">
-                            <a><img className="img-fluid" src="assets/img/sponsors/logo-02.png" alt="" /></a>
+                            <Link to='/'><img className="img-fluid" src="assets/img/sponsors/logo-02.png" alt="" /></Link>
                         </div>
                     </div>
                     <div className="col-md-3 col-sm-3 col-xs-12">
                         <div className="spnsors-logo">
-                            <a><img className="img-fluid" src="assets/img/sponsors/logo-03.png" alt="" /></a>
+                            <Link to='/'><img className="img-fluid" src="assets/img/sponsors/logo-03.png" alt="" /></Link>
                         </div>
                     </div>
                     <div className="col-md-3 col-sm-3 col-xs-12">
                         <div className="spnsors-logo">
-                            <a><img className="img-fluid" src="assets/img/sponsors/logo-04.png" alt="" /></a>
+                            <Link to='/'><img className="img-fluid" src="assets/img/sponsors/logo-04.png" alt="" /></Link>
                         </div>
                     </div>
                     <div className="col-12 text-center">
-                        <a className="btn btn-common">become a sponsor</a>
+                        <Link to='/' className="btn btn-common">become a sponsor</Link>
                     </div>
                 </div>
             </div>

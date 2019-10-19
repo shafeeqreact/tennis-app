@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const About = () => {
     return (
@@ -17,9 +18,9 @@ const About = () => {
                         <div className="about-item">
                             <img className="img-fluid" src="assets/img/about/img1.jpg" alt="" />
                             <div className="about-text">
-                                <h3><a href="#">Wanna Know Our Mission?</a></h3>
+                                <h3><Link to='/'>Wanna Know Our Mission?</Link></h3>
                                 <p>Lorem ipsum dolor sit amet, consectetuer commodo ligula eget dolor.</p>
-                                <a className="btn btn-common btn-rm" href="#">Read More</a>
+                                <Link className="btn btn-common btn-rm" to='/'>Read More</Link>
                             </div>
                         </div>
                     </div>
@@ -27,9 +28,9 @@ const About = () => {
                         <div className="about-item">
                             <img className="img-fluid" src="assets/img/about/img2.jpg" alt="" />
                             <div className="about-text">
-                                <h3><a href="#">What you will learn?</a></h3>
+                                <h3><Link to='/'>What you will learn?</Link></h3>
                                 <p>Lorem ipsum dolor sit amet, consectetuer commodo ligula eget dolor.</p>
-                                <a className="btn btn-common btn-rm" href="#">Read More</a>
+                                <Link className="btn btn-common btn-rm" to='/'>Read More</Link>
                             </div>
                         </div>
                     </div>
@@ -37,9 +38,9 @@ const About = () => {
                         <div className="about-item">
                             <img className="img-fluid" src="assets/img/about/img3.jpg" alt="" />
                             <div className="about-text">
-                                <h3><a href="#">What are the benifits?</a></h3>
+                                <h3><Link to='/'>What are the benifits?</Link></h3>
                                 <p>Lorem ipsum dolor sit amet, consectetuer commodo ligula eget dolor.</p>
-                                <a className="btn btn-common btn-rm" href="#">Read More</a>
+                                <Link className="btn btn-common btn-rm" to='/'>Read More</Link>
                             </div>
                         </div>
                     </div>

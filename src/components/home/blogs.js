@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Blogs = () => {
     return (
@@ -14,20 +15,16 @@ const Blogs = () => {
                     <div className="col-lg-4 col-md-6 col-xs-12">
                         <div className="blog-item">
                             <div className="blog-image">
-                                <a href="#">
-                                    <img className="img-fluid" src="assets/img/blog/img-1.jpg" alt="" />
-                                </a>
+                                <Link to='/'><img className="img-fluid" src="assets/img/blog/img-1.jpg" alt="" /></Link>
                             </div>
                             <div className="descr">
                                 <div className="tag">Design</div>
                                 <h3 className="title">
-                                    <a href="single-blog.html">
-                                        The 9 Design Trends You Need to Know
-                    </a>
+                                    <Link to='/'>The 9 Design Trends You Need to Know</Link>
                                 </h3>
                                 <div className="meta-tags">
                                     <span className="date">Jan 20, 2018</span>
-                                    <span className="comments">| <a href="#"> by Cindy Jefferson</a></span>
+                                    <span className="comments">| <Link to='/'> by Cindy Jefferson</Link></span>
                                 </div>
                             </div>
                         </div>
@@ -35,20 +32,16 @@ const Blogs = () => {
                     <div className="col-lg-4 col-md-6 col-xs-12">
                         <div className="blog-item">
                             <div className="blog-image">
-                                <a href="#">
-                                    <img className="img-fluid" src="assets/img/blog/img-2.jpg" alt="" />
-                                </a>
+                                <Link to='/'><img className="img-fluid" src="assets/img/blog/img-2.jpg" alt="" /></Link>
                             </div>
                             <div className="descr">
                                 <div className="tag">Design</div>
                                 <h3 className="title">
-                                    <a href="single-blog.html">
-                                        The 9 Design Trends You Need to Know
-                    </a>
+                                    <Link to='/'>The 9 Design Trends You Need to Know</Link>
                                 </h3>
                                 <div className="meta-tags">
                                     <span className="date">Jan 20, 2018 </span>
-                                    <span className="comments">| <a href="#"> by Cindy Jefferson</a></span>
+                                    <span className="comments">| <Link to='/'> by Cindy Jefferson</Link></span>
                                 </div>
                             </div>
                         </div>
@@ -56,26 +49,22 @@ const Blogs = () => {
                     <div className="col-lg-4 col-md-6 col-xs-12">
                         <div className="blog-item">
                             <div className="blog-image">
-                                <a href="#">
-                                    <img className="img-fluid" src="assets/img/blog/img-3.jpg" alt="" />
-                                </a>
+                                <Link to='/'><img className="img-fluid" src="assets/img/blog/img-3.jpg" alt="" /></Link>
                             </div>
                             <div className="descr">
                                 <div className="tag">Design</div>
                                 <h3 className="title">
-                                    <a href="single-blog.html">
-                                        The 9 Design Trends You Need to Know
-                    </a>
+                                    <Link to='/'>The 9 Design Trends You Need to Know</Link>
                                 </h3>
                                 <div className="meta-tags">
                                     <span className="date">Jan 20, 2018</span>
-                                    <span className="comments">| <a href="#"> by Cindy Jefferson</a></span>
+                                    <span className="comments">| <Link to='/'> by Cindy Jefferson</Link></span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className="col-12 text-center">
-                        <a href="#" className="btn btn-common">Read More News</a>
+                        <Link to='/' className="btn btn-common">Read More News</Link>
                     </div>
                 </div>
             </div>

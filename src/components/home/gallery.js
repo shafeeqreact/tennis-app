@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Gallery = () => {
     return (
@@ -19,9 +20,9 @@ const Gallery = () => {
                                 <img className="img-fluid" src="assets/img/gallery/img-1.jpg" alt="" />
                             </div>
                             <div className="overlay-box text-center">
-                                <a className="lightbox" href="assets/img/gallery/img-1.jpg">
+                                <Link className="lightbox" to="/">
                                     <i className="lni-plus"></i>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -31,9 +32,9 @@ const Gallery = () => {
                                 <img className="img-fluid" src="assets/img/gallery/img-2.jpg" alt="" />
                             </div>
                             <div className="overlay-box text-center">
-                                <a className="lightbox" href="assets/img/gallery/img-2.jpg">
+                                <Link className="lightbox" to="/">
                                     <i className="lni-plus"></i>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -43,9 +44,9 @@ const Gallery = () => {
                                 <img className="img-fluid" src="assets/img/gallery/img-3.jpg" alt="" />
                             </div>
                             <div className="overlay-box text-center">
-                                <a className="lightbox" href="assets/img/gallery/img-3.jpg">
+                                <Link className="lightbox" to="/">
                                     <i className="lni-plus"></i>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -55,9 +56,9 @@ const Gallery = () => {
                                 <img className="img-fluid" src="assets/img/gallery/img-4.jpg" alt="" />
                             </div>
                             <div className="overlay-box text-center">
-                                <a className="lightbox" href="assets/img/gallery/img-4.jpg">
+                                <Link className="lightbox" to="/">
                                     <i className="lni-plus"></i>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -67,9 +68,9 @@ const Gallery = () => {
                                 <img className="img-fluid" src="assets/img/gallery/img-5.jpg" alt="" />
                             </div>
                             <div className="overlay-box text-center">
-                                <a className="lightbox" href="assets/img/gallery/img-5.jpg">
+                                <Link className="lightbox" to="/">
                                     <i className="lni-plus"></i>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -79,16 +80,16 @@ const Gallery = () => {
                                 <img className="img-fluid" src="assets/img/gallery/img-6.jpg" alt="" />
                             </div>
                             <div className="overlay-box text-center">
-                                <a className="lightbox" href="assets/img/gallery/img-6.jpg">
+                                <Link className="lightbox" to="/">
                                     <i className="lni-plus"></i>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="row justify-content-center mt-3">
                     <div className="col-xs-12">
-                        <a href="#" className="btn btn-common">Browse All</a>
+                        <Link to="/" className="btn btn-common">Browse All</Link>
                     </div>
                 </div>
             </div>
