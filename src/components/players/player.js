@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import PreLoader from '../home/preLoader';
+import { getPlayer } from '../../redux';
 
 const Player = (props) => {
-    const [player, setPlayer] = useState([]);
-    console.log(props)
+    const player = useSelector(state => state.player);
+    const isLoading = useSelector(state => state.isLoading);
+    const dispatch = useDispatch();
+
     useEffect(() => {
-        let player =
-        {
-            "id": 1, "email": "george.bluth@reqres.in", "first_name": "George", "last_name": "Bluth", "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg",
-            "facebook_link": "https://www.facebook.com"
-        };
-        setPlayer(player);
+        dispatch(getPlayer(props.match.params.id))
     }, []);
+
+    if (isLoading)
+        return <PreLoader />
 
     return (
         <section id="team" className="section-padding text-center">
