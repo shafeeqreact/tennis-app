@@ -1,4 +1,5 @@
 import { GET_PLAYER, GET_PLAYERS, GET_ALL_PLAYERS } from "./types";
+import { FETCH_REQUEST, FETCH_REQUEST_SUCCESS, FETCH_REQUEST_FAILURE } from "../thunk/types";
 
 const initialState = {
     players: [],
@@ -32,6 +33,13 @@ const allPlayers = [
 
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
+        case FETCH_REQUEST:
+            return { ...state, players: [], isLoading: true, error: '' }
+        case FETCH_REQUEST_SUCCESS:
+            const players = [...state.players, ...action.payload];
+            return { ...state, players, isLoading: false, error: '' }
+        case FETCH_REQUEST_FAILURE:
+            return { ...state, players: [], isLoading: false, error: action.payload }
         case GET_PLAYER:
             const player = allPlayers.filter(item => item.id == action.payload)[0];
             return { ...state, player, isLoading: false }

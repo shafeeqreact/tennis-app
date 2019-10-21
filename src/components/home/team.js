@@ -1,16 +1,17 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getPlayers } from '../../redux';
+import { fetchPlayers } from '../../redux';
 import PreLoader from './preLoader';
 
 const Team = () => {
     const players = useSelector(state => state.players);
+    const error = useSelector(state => state.error);
     const isLoading = useSelector(state => state.isLoading);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getPlayers());
+        dispatch(fetchPlayers());
     }, []);
 
     if (isLoading)
@@ -28,6 +29,7 @@ const Team = () => {
                     </div>
                 </div>
                 <div className="row">
+                    {(error) ? <div className="col-sm-12 col-md-12 col-lg-12">Something went wrong!! {error}</div> : ''}
                     {players.map(player =>
                         <div key={player.id} className="col-sm-6 col-md-6 col-lg-4">
                             <div className="team-item wow fadeInUp" data-wow-delay="0.2s">

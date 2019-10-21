@@ -1,1 +1,1 @@
-export { getPlayer, getPlayers, getAllPlayers } from './players/actions';
+export { getPlayer, getPlayers, getAllPlayers, fetchPlayers, fetchAllPlayers } from './players/actions';

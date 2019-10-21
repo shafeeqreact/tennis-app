@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getAllPlayers } from '../../redux';
+import { fetchAllPlayers } from '../../redux';
 import PreLoader from '../home/preLoader';
 
 const Players = (props) => {
     const players = useSelector(state => state.players);
+    const error = useSelector(state => state.error);
     const isLoading = useSelector(state => state.isLoading);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getAllPlayers())
+        dispatch(fetchAllPlayers())
     }, []);
 
     if (isLoading)
@@ -27,6 +28,7 @@ const Players = (props) => {
                     </div>
                 </div>
                 <div className="row">
+                    {(error) ? <div className="col-sm-12 col-md-12 col-lg-12">Something went wrong!! {error}</div> : ''}
                     {players.map(player =>
                         <div onClick={() => props.history.push(`/players/${player.id}`)} key={player.id} className="col-sm-6 col-md-6 col-lg-4">
                             <div className="team-item wow fadeInUp" data-wow-delay="0.2s">
