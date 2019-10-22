@@ -1,3 +1,4 @@
-export const GET_PLAYER = 'GET_PLAYER';
-export const GET_PLAYERS = 'GET_PLAYERS';
-export const GET_ALL_PLAYERS = 'GET_ALL_PLAYERS';
+export const SET_PLAYER = 'SET_PLAYER';
+export const SET_PLAYERS = 'SET_PLAYERS';
+export const SET_IS_LOADING = 'SET_IS_LOADING';
+export const SET_ERROR = 'SET_ERROR';

@@ -1,52 +1,28 @@
-import axios from 'axios';
-import { GET_PLAYER, GET_PLAYERS, GET_ALL_PLAYERS } from './types';
-import { fetchRequest, fetchRequestSuccess, fetchRequestFailure } from '../thunk/actions';
+import { SET_PLAYER, SET_PLAYERS, SET_IS_LOADING, SET_ERROR } from "./types"
 
-export const getPlayer = (id) => {
+export const setPlayer = (data) => {
     return {
-        type: GET_PLAYER,
-        payload: id
+        type: SET_PLAYER,
+        payload: data
     }
 }
 
-export const getPlayers = () => {
+export const setPlayers = (data) => {
     return {
-        type: GET_PLAYERS
+        type: SET_PLAYERS,
+        payload: data
     }
 }
 
-export const getAllPlayers = () => {
+export const setIsLoading = () => {
     return {
-        type: GET_ALL_PLAYERS
+        type: SET_IS_LOADING
     }
 }
 
-export const fetchPlayers = () => {
-    return (dispatch) => {
-        dispatch(fetchRequest());
-        axios.get('https://reqres.in/api/users')
-            .then(response => {
-                dispatch(fetchRequestSuccess(response.data.data))
-            })
-            .catch(error => {
-                dispatch(fetchRequestFailure(error.message))
-            })
-    }
-}
-
-export const fetchAllPlayers = () => {
-    return (dispatch) => {
-        dispatch(fetchRequest());
-        axios.get('https://reqres.in/api/users')
-            .then(response => {
-                for (let i = 1; i <= response.data.total_pages; i++) {
-                    axios.get(`https://reqres.in/api/users?page=${i}`)
-                        .then(response => dispatch(fetchRequestSuccess(response.data.data)))
-                        .catch(error => dispatch(fetchRequestFailure(error.message)))
-                }
-            })
-            .catch(error => {
-                dispatch(fetchRequestFailure(error.message))
-            })
+export const setError = (data) => {
+    return {
+        type: SET_ERROR,
+        payload: data
     }
 }

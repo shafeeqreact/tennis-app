@@ -1,16 +1,17 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchAllPlayers } from '../../redux';
+import { getAllPlayers } from '../../redux';
 import PreLoader from '../home/preLoader';
 
 const Players = (props) => {
     const players = useSelector(state => state.players);
-    const error = useSelector(state => state.error);
     const isLoading = useSelector(state => state.isLoading);
+    const error = useSelector(state => state.error);
+
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchAllPlayers())
+        dispatch(getAllPlayers());
     }, []);
 
     if (isLoading)

@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchPlayers } from '../../redux';
-import PreLoader from './preLoader';
+import { useSelector, useDispatch } from 'react-redux';
+import { getPlayers } from '../../redux';
+import PreLoader from '../home/preLoader';
 
-const Team = () => {
+const Team = (props) => {
     const players = useSelector(state => state.players);
-    const error = useSelector(state => state.error);
     const isLoading = useSelector(state => state.isLoading);
+    const error = useSelector(state => state.error);
+
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchPlayers());
+        dispatch(getPlayers());
     }, []);
 
     if (isLoading)
@@ -31,7 +32,7 @@ const Team = () => {
                 <div className="row">
                     {(error) ? <div className="col-sm-12 col-md-12 col-lg-12">Something went wrong!! {error}</div> : ''}
                     {players.map(player =>
-                        <div key={player.id} className="col-sm-6 col-md-6 col-lg-4">
+                        <div onClick={() => props.history.push(`/players/${player.id}`)} key={player.id} className="col-sm-6 col-md-6 col-lg-4">
                             <div className="team-item wow fadeInUp" data-wow-delay="0.2s">
                                 <div className="team-img">
                                     <img className="img-fluid" style={{ height: 333 }} src={player.avatar} alt={player.first_name} />

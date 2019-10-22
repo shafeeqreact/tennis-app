@@ -1,15 +1,18 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import PreLoader from '../home/preLoader';
 import { getPlayer } from '../../redux';
+import PreLoader from '../home/preLoader';
 
 const Player = (props) => {
     const player = useSelector(state => state.player);
     const isLoading = useSelector(state => state.isLoading);
+    const error = useSelector(state => state.error);
+
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getPlayer(props.match.params.id))
+        const id = parseInt(props.match.params.id);
+        dispatch(getPlayer(id));
     }, []);
 
     if (isLoading)
@@ -19,6 +22,7 @@ const Player = (props) => {
         <section id="team" className="section-padding text-center">
             <div className="container">
                 <div className="row">
+                    {(error) ? <div className="col-sm-12 col-md-12 col-lg-12">Something went wrong!! {error}</div> : ''}
                     <div className="col-sm-12 col-md-6 col-lg-6">
                         <div className="team-img">
                             <img className="img-fluid" style={{ height: 500 }} src={player.avatar} alt={player.first_name} />

@@ -20,7 +20,7 @@ import CopyrightLink from './copyrightLink';
 import GoToTop from './goToTop';
 import PreLoader from './preLoader';
 
-const Home = () => {
+const Home = (props) => {
     return (
         <React.Fragment>
             <Header />
@@ -29,7 +29,7 @@ const Home = () => {
             <About />
             <Counter />
             <Schedule />
-            <Team />
+            <Team {...props} />
             <Gallery />
             <FAQ />
             <Sponsors />
