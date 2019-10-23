@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllPlayers } from '../../redux';
-import PreLoader from '../home/preLoader';
+import PreLoader from '../common/preLoader';
 
 const Players = (props) => {
     const players = useSelector(state => state.players);

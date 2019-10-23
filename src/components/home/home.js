@@ -18,7 +18,7 @@ import ContactUs from './contactUs';
 import Footer from './footer';
 import CopyrightLink from './copyrightLink';
 import GoToTop from './goToTop';
-import PreLoader from './preLoader';
+// import PreLoader from '../common/preLoader';
 
 const Home = (props) => {
     return (
@@ -42,7 +42,7 @@ const Home = (props) => {
             <Footer />
             <CopyrightLink />
             <GoToTop />
-            <PreLoader />
+            {/* <PreLoader /> */}
         </React.Fragment>
     );
 }

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getPlayers } from '../../redux';
-import PreLoader from '../home/preLoader';
+import PreLoader from '../common/preLoader';
 
 const Team = (props) => {
     const players = useSelector(state => state.players);
