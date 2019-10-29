@@ -1,5 +1,7 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import { reducer } from './players/reducer';
+import { rootReducer } from './rootReducer';
 
-export const store = createStore(reducer, applyMiddleware(thunk));
+export const store = createStore(rootReducer, applyMiddleware(thunk));
+
+console.log('store - ', store.getState())

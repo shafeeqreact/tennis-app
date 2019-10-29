@@ -1,18 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CommonHeader from '../common/commonHeader';
 
 const About = () => {
     return (
         <section id="about" className="section-padding">
             <div className="container">
-                <div className="row">
-                    <div className="col-12">
-                        <div className="section-title-header text-center">
-                            <h1 className="section-title wow fadeInUp" data-wow-delay="0.2s">About This Events</h1>
-                            <p className="wow fadeInDown" data-wow-delay="0.2s">Global Grand Event on Digital Design</p>
-                        </div>
-                    </div>
-                </div>
+                <CommonHeader name="About This Event" tagline1="Global Grand Event on Digital Design" />
                 <div className="row">
                     <div className="col-xs-12 col-md-6 col-lg-4">
                         <div className="about-item">

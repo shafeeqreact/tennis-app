@@ -4,9 +4,9 @@ import { getAllPlayers } from '../../redux';
 import PreLoader from '../common/preLoader';
 
 const Players = (props) => {
-    const players = useSelector(state => state.players);
-    const isLoading = useSelector(state => state.isLoading);
-    const error = useSelector(state => state.error);
+    const players = useSelector(state => state.players.players);
+    const isLoading = useSelector(state => state.players.isLoading);
+    const error = useSelector(state => state.players.error);
 
     const dispatch = useDispatch();
 
