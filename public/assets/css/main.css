@@ -1064,7 +1064,7 @@ a.back-to-top:hover, a.back-to-top:focus {
   width: 70px;
   height: 70px;
   float: left;
-  margin-right: 20px;
+  /* margin-right: 20px; */
 }
 
 .schedule .card-header .images-box img {
@@ -1098,9 +1098,17 @@ a.back-to-top:hover, a.back-to-top:focus {
 }
 
 .schedule .card-body {
-  padding: 15px 70px 15px 110px;
+  padding: 15px;
   background: #fff;
   border-bottom: 1px solid #ddd;
+}
+
+.schedule .card-body .set-table {
+  padding: 0% 25%;
+}
+
+.schedule .card-body .game-table {
+  padding: 0% 10%;
 }
 
 .schedule .card-body .location {

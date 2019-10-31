@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CommonHeader = ({ name, tagline1, tagline2 }) => {
+const SectionHeader = ({ name, tagline1, tagline2 }) => {
     return (
         <div className="row">
             <div className="col-12">
@@ -13,4 +13,4 @@ const CommonHeader = ({ name, tagline1, tagline2 }) => {
     );
 }
 
-export default CommonHeader;
+export default SectionHeader;

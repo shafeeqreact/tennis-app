@@ -1,31 +1,43 @@
-import { SET_SCHEDULE, SET_IS_LOADING, SET_ERROR } from "./types";
+import { SET_TOURNAMENT, SET_TOURNAMENTS, SET_IS_LOADING, SET_ERROR } from "./types";
 
 const initialState = {
-    schedule: [],
-    isLoading: false,
+    tournament: {},
+    tournaments: [],
+    isLoading: true,
     error: ''
 }
 
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case SET_SCHEDULE:
+        case SET_TOURNAMENT:
             return {
                 ...state,
-                schedule: [...state.schedule, ...action.payload],
+                tournament: action.payload,
+                tournaments: [],
+                isLoading: false,
+                error: ''
+            }
+        case SET_TOURNAMENTS:
+            return {
+                ...state,
+                tournament: {},
+                tournaments: [...action.payload],
                 isLoading: false,
                 error: ''
             }
         case SET_IS_LOADING:
             return {
                 ...state,
-                schedule: [],
+                tournament: {},
+                tournaments: [],
                 isLoading: true,
                 error: ''
             }
         case SET_ERROR:
             return {
                 ...state,
-                schedule: [],
+                tournament: {},
+                tournaments: [],
                 isLoading: false,
                 error: action.payload
             }

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getPlayers } from '../../redux';
 import PreLoader from '../common/preLoader';
-import CommonHeader from '../common/commonHeader';
+import SectionHeader from '../common/sectionHeader';
 
 const Team = (props) => {
     const players = useSelector(state => state.players.players);
@@ -16,13 +16,13 @@ const Team = (props) => {
         dispatch(getPlayers());
     }, []);
 
-    if (isLoading)
-        return <PreLoader />
+    // if (isLoading)
+    //     return <PreLoader />
 
     return (
         <section id="team" className="section-padding text-center">
             <div className="container">
-                <CommonHeader
+                <SectionHeader
                     name="Who's Playing?"
                     tagline1="World's Top Tennis Players"
                 />

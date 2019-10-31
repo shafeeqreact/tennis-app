@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CommonHeader from '../common/commonHeader';
+import SectionHeader from '../common/sectionHeader';
 
 const About = () => {
     return (
         <section id="about" className="section-padding">
             <div className="container">
-                <CommonHeader name="About This Event" tagline1="Global Grand Event on Digital Design" />
+                <SectionHeader name="About This Event" tagline1="Global Grand Event on Digital Design" />
                 <div className="row">
                     <div className="col-xs-12 col-md-6 col-lg-4">
                         <div className="about-item">

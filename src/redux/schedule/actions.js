@@ -1,8 +1,15 @@
-import { SET_SCHEDULE, SET_IS_LOADING, SET_ERROR } from "./types"
+import { SET_TOURNAMENT, SET_TOURNAMENTS, SET_IS_LOADING, SET_ERROR } from "./types"
 
-export const setSchedule = (data) => {
+export const setTournament = (data) => {
     return {
-        type: SET_SCHEDULE,
+        type: SET_TOURNAMENT,
+        payload: data
+    }
+}
+
+export const setTournaments = (data) => {
+    return {
+        type: SET_TOURNAMENTS,
         payload: data
     }
 }

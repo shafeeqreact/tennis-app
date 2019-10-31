@@ -162,4 +162,78 @@ const rounds = [
 
 rounds[0].show = true;
 
-export const schedule = [...rounds];
+export const tournament = {
+    tourney_id: 1,
+    tourney_name: 'Jimbledon',
+    tourney_location: 'Pompano Beach, FL',
+    tourney_start_date: '10/01/2019',
+    tourney_start_year: 2019,
+    tourney_start_month: 10,
+    tourney_start_day: 1,
+    tourney_end_date: '10/31/2019',
+    tourney_end_year: 2019,
+    tourney_end_month: 10,
+    tourney_end_day: 31,
+    tourney_surface: 'hard',
+    singles_winner_player_id: 1,
+    singles_winner_player_name: 'Federer',
+    singles_winner_player_url: '',
+    doubles_winner_1_player_id: 1,
+    doubles_winner_1_player_name: 'Federer',
+    doubles_winner_1_player_url: '',
+    doubles_winner_2_player_id: 2,
+    doubles_winner_2_player_name: 'Nadal',
+    doubles_winner_2_player_url: '',
+    rounds: rounds
+}
+
+export const tournaments = [
+    {
+        tourney_id: 1,
+        tourney_name: 'Jimbledon',
+        tourney_location: 'Pompano Beach, FL',
+        tourney_start_date: '10/01/2019',
+        tourney_start_year: 2019,
+        tourney_start_month: 10,
+        tourney_start_day: 1,
+        tourney_end_date: '10/31/2019',
+        tourney_end_year: 2019,
+        tourney_end_month: 10,
+        tourney_end_day: 31,
+        tourney_surface: 'hard',
+        singles_winner_player_id: 1,
+        singles_winner_player_name: 'Federer',
+        singles_winner_player_url: '',
+        doubles_winner_1_player_id: 1,
+        doubles_winner_1_player_name: 'Federer',
+        doubles_winner_1_player_url: '',
+        doubles_winner_2_player_id: 2,
+        doubles_winner_2_player_name: 'Nadal',
+        doubles_winner_2_player_url: '',
+        rounds: rounds
+    },
+    {
+        tourney_id: 2,
+        tourney_name: 'US Open',
+        tourney_location: 'New York',
+        tourney_start_date: '10/01/2019',
+        tourney_start_year: 2019,
+        tourney_start_month: 10,
+        tourney_start_day: 1,
+        tourney_end_date: '10/31/2019',
+        tourney_end_year: 2019,
+        tourney_end_month: 10,
+        tourney_end_day: 31,
+        tourney_surface: 'hard',
+        singles_winner_player_id: 1,
+        singles_winner_player_name: 'Federer',
+        singles_winner_player_url: '',
+        doubles_winner_1_player_id: 1,
+        doubles_winner_1_player_name: 'Federer',
+        doubles_winner_1_player_url: '',
+        doubles_winner_2_player_id: 2,
+        doubles_winner_2_player_name: 'Nadal',
+        doubles_winner_2_player_url: '',
+        rounds: rounds
+    }
+];

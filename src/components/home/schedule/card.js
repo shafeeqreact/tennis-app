@@ -1,9 +1,12 @@
 import React from 'react';
+import SetTable from './setTable';
+import GameTable from './gameTable';
 
 const Card = (props) => {
     const { round_id } = props;
 
-    const { match_id, show, first_player_url, second_player_url, match_date, match_time, first_player_id, second_player_id, first_player_last_name, second_player_last_name, match_location, sets } = props.match;
+    const { match_id, show, first_player_url, second_player_url, match_date, match_time, first_player_id, second_player_id,
+        first_player_last_name, second_player_last_name, match_location, sets } = props.match;
 
     return (
         <div className="card">
@@ -31,34 +34,24 @@ const Card = (props) => {
             <div id={`collapse${match_id}${round_id}`} className={show ? "collapse show" : "collapse"}
                 aria-labelledby={`heading${match_id}${round_id}`} data-parent={`#accordion${round_id}`}>
                 <div className="card-body">
-                    <table className="table table-bordered">
-                        <tbody>
-                            <tr>
-                                <th className="text-left">Federer</th>
-                                {sets.map(set =>
-                                    <td key={set.set_number}>
-                                        {set.winner_player_id == first_player_id ? <strong>{set.first_player_games_won}</strong> : set.first_player_games_won}
-                                        {set.is_tiebreak ? <sup>{set.first_player_tiebreakers_won}</sup> : null}
-                                    </td>
-                                )}
-                            </tr>
-                            <tr>
-                                <th className="text-left">Nadal</th>
-                                {sets.map(set =>
-                                    <td key={set.set_number}>
-                                        {set.winner_player_id == second_player_id ? <strong>{set.second_player_games_won}</strong> : set.second_player_games_won}
-                                        {set.is_tiebreak ? <sup>{set.second_player_tiebreakers_won}</sup> : null}
-                                    </td>
-                                )}
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div className="set-table">
+                        <SetTable sets={sets} first_player_id={first_player_id} second_player_id={second_player_id} />
+                    </div>
                     <div className="location">
                         <span>Location: </span>{match_location}
+                        <span>Show Games</span>
+                    </div>
+                    <div className="game-table">
+                        {sets.map(set =>
+                            <div>
+                                <h5 className="text-left">Set - {set.set_number}:</h5>
+                                <GameTable games={set.games} first_player_id={first_player_id} second_player_id={second_player_id} />
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 
