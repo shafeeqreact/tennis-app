@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SetTable from './setTable';
 import GameTable from './gameTable';
 
@@ -6,7 +6,13 @@ const Card = (props) => {
     const { round_id } = props;
 
     const { match_id, show, first_player_url, second_player_url, match_date, match_time, first_player_id, second_player_id,
-        first_player_last_name, second_player_last_name, match_location, sets } = props.match;
+        first_player_last_name, second_player_last_name, match_location, sets, match_has_started } = props.match;
+
+    const [showGames, setShowGames] = useState(false);
+
+    const handleClick = () => {
+        setShowGames(!showGames);
+    }
 
     return (
         <div className="card">
@@ -21,7 +27,7 @@ const Card = (props) => {
                         </div>
                         <div className="col-6">
                             <h4 className="mt-2">{first_player_last_name} V/S {second_player_last_name}</h4>
-                            <h5 className="name"><span>Date: </span>{match_date} <br /> <span>Time: </span>{match_time}</h5>
+                            <h5 className="name"><span>Round: </span>{round_id} <span style={{ marginLeft: "20px" }}>Match: </span>{match_id}</h5>
                         </div>
                         <div className="col-3">
                             <div className="images-box">
@@ -34,21 +40,33 @@ const Card = (props) => {
             <div id={`collapse${match_id}${round_id}`} className={show ? "collapse show" : "collapse"}
                 aria-labelledby={`heading${match_id}${round_id}`} data-parent={`#accordion${round_id}`}>
                 <div className="card-body">
-                    <div className="set-table">
-                        <SetTable sets={sets} first_player_id={first_player_id} second_player_id={second_player_id} />
-                    </div>
                     <div className="location">
+                        <span>Date: </span>{match_date}
+                        <span style={{ marginLeft: "20px" }} >Time: </span>{match_time}<br />
                         <span>Location: </span>{match_location}
-                        <span>Show Games</span>
                     </div>
-                    <div className="game-table">
-                        {sets.map(set =>
-                            <div>
-                                <h5 className="text-left">Set - {set.set_number}:</h5>
-                                <GameTable games={set.games} first_player_id={first_player_id} second_player_id={second_player_id} />
+                    {match_has_started ?
+                        <div>
+                            <div className="set-table">
+                                <hr />
+                                <SetTable sets={sets} first_player_id={first_player_id} second_player_id={second_player_id} />
                             </div>
-                        )}
-                    </div>
+                            <button onClick={() => handleClick()} className="btn btn-common btn-rm">
+                                {showGames ? 'Hide Games' : 'Show Games'}
+                            </button>
+                            {showGames ?
+                                <div className="game-table">
+                                    <hr />
+                                    {sets.map(set =>
+                                        <div key={set.set_number} >
+                                            <h5 className="text-left">Set - {set.set_number}:</h5>
+                                            <GameTable games={set.games} first_player_id={first_player_id} second_player_id={second_player_id} />
+                                        </div>
+                                    )}
+                                </div> : null
+                            }
+                        </div>
+                        : null}
                 </div>
             </div>
         </div >

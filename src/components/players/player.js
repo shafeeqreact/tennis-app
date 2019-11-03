@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+
 import { getPlayer } from '../../redux';
+
 import PreLoader from '../common/preLoader';
 
 const Player = (props) => {

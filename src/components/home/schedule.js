@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+
 import { getTournament } from '../../redux/schedule/thunkActions';
+
 import PreLoader from '../common/preLoader';
 import SectionHeader from '../common/sectionHeader';
-import ListGroup from '../common/listGroup';
+import ListGroup from './schedule/listGroup';
 import Card from './schedule/card';
 
 const Schedule = () => {
@@ -21,8 +23,8 @@ const Schedule = () => {
             <div className="container">
                 <SectionHeader
                     name="Event Schedules"
-                    tagline1="Lorem ipsum dolor sit amet, consectetur adipiscing"
-                    tagline2="elit, sed do eiusmod tempor"
+                    tagline1={`Complete Schedule of the ${isLoading ? '' : tournament.tourney_name} Tournament`}
+                    tagline2="Do Not Miss The Matches"
                 />
                 {isLoading ? <PreLoader /> :
                     <React.Fragment>

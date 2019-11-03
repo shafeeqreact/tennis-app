@@ -8,9 +8,7 @@ const Footer = () => {
                 <div className="row">
                     <div className="col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.2s">
                         <h3><img src="assets/img/logo.png" alt="" /></h3>
-                        <p>
-                            Aorem ipsum dolor sit amet elit sed lum tempor incididunt ut labore el dolore alg minim veniam quis nostrud ncididunt.
-              </p>
+                        <p>Aorem ipsum dolor sit amet elit sed lum tempor incididunt ut labore el dolore alg minim veniam quis nostrud ncididunt.</p>
                     </div>
                     <div className="col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.4s">
                         <h3>QUICK LINKS</h3>
@@ -51,7 +49,7 @@ const Footer = () => {
                             <div className="newsletter-wrapper">
                                 <form method="post" id="subscribe-form" name="subscribe-form" className="validate">
                                     <div className="form-group is-empty">
-                                        <input type="email" value="" name="Email" className="form-control" id="EMAIL" placeholder="Your email" required="" />
+                                        <input type="email" name="Email" className="form-control" id="EMAIL" placeholder="Your email" required="" />
                                         <button type="submit" name="subscribe" id="subscribes" className="btn btn-common sub-btn"><i className="lni-pointer"></i></button>
                                         <div className="clearfix"></div>
                                     </div>

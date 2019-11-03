@@ -7,7 +7,7 @@ const CopyrightLink = () => {
                 <div className="row">
                     <div className="col-md-12">
                         <div className="site-info">
-                            <p>© Designed and Developed by <a href="http://uideck.com" rel="nofollow">UIdeck</a></p>
+                            <p>© Designed and Developed by <a href="https://www.facebook.com/mohammed.shafeeq.9440" rel="nofollow">Shafeeq</a></p>
                         </div>
                     </div>
                 </div>

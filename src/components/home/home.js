@@ -1,17 +1,19 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+
 import Header from './header';
 import Countdown from './countdown';
-import Services from './services';
-import About from './about';
+// import Services from './services';
+// import About from './about';
 import Counter from './counter';
 import Schedule from './schedule';
 import Team from './team';
 import Gallery from './gallery';
 import FAQ from './faq';
-import Sponsors from './sponsors';
+// import Sponsors from './sponsors';
 import Pricing from './pricing';
 import EventSlides from './eventSlides';
-import Blogs from './blogs';
+// import Blogs from './blogs';
 import SubscribeArea from './subscribeArea';
 import Map from './map';
 import ContactUs from './contactUs';
@@ -20,21 +22,23 @@ import CopyrightLink from './copyrightLink';
 import GoToTop from './goToTop';
 
 const Home = (props) => {
+    const tourney_has_started = useSelector(state => state.schedule.tournament.tourney_has_started);
     return (
         <React.Fragment>
             <Header />
-            <Countdown />
-            <Services />
-            <About />
+            {tourney_has_started ? null : <Countdown />}
+            <Team {...props} />
+            {/* <Services /> */}
+            {/* <About /> */}
             <Counter />
             <Schedule />
-            <Team {...props} />
+            {/* <Team {...props} /> */}
             <Gallery />
             <FAQ />
-            <Sponsors />
+            {/* <Sponsors /> */}
             <Pricing />
             <EventSlides />
-            <Blogs />
+            {/* <Blogs /> */}
             <SubscribeArea />
             <Map />
             <ContactUs />

@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+
 import { getAllPlayers } from '../../redux';
+
 import PreLoader from '../common/preLoader';
 
 const Players = (props) => {
@@ -12,7 +14,7 @@ const Players = (props) => {
 
     useEffect(() => {
         dispatch(getAllPlayers());
-    }, []);
+    }, [dispatch]);
 
     if (isLoading)
         return <PreLoader />
