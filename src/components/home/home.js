@@ -3,17 +3,17 @@ import { useSelector } from 'react-redux';
 
 import Header from './header';
 import Countdown from './countdown';
-// import Services from './services';
-// import About from './about';
+import Services from './services';
+import About from './about';
 import Counter from './counter';
 import Schedule from './schedule';
 import Team from './team';
 import Gallery from './gallery';
 import FAQ from './faq';
-// import Sponsors from './sponsors';
+import Sponsors from './sponsors';
 import Pricing from './pricing';
 import EventSlides from './eventSlides';
-// import Blogs from './blogs';
+import Blogs from './blogs';
 import SubscribeArea from './subscribeArea';
 import Map from './map';
 import ContactUs from './contactUs';
@@ -27,18 +27,17 @@ const Home = (props) => {
         <React.Fragment>
             <Header />
             {tourney_has_started ? null : <Countdown />}
-            <Team {...props} />
-            {/* <Services /> */}
-            {/* <About /> */}
+            <Services />
+            <About />
             <Counter />
             <Schedule />
-            {/* <Team {...props} /> */}
+            <Team {...props} />
             <Gallery />
             <FAQ />
-            {/* <Sponsors /> */}
+            <Sponsors />
             <Pricing />
             <EventSlides />
-            {/* <Blogs /> */}
+            <Blogs />
             <SubscribeArea />
             <Map />
             <ContactUs />

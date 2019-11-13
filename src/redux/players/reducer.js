@@ -1,4 +1,4 @@
-import { SET_PLAYER, SET_PLAYERS, SET_IS_LOADING, SET_ERROR } from "./types";
+import { SET_PLAYER, SET_PLAYERS, SET_ALL_PLAYERS, SET_IS_LOADING, SET_ERROR } from "./types";
 
 const initialState = {
     player: {},
@@ -18,6 +18,14 @@ export const reducer = (state = initialState, action) => {
                 error: ''
             }
         case SET_PLAYERS:
+            return {
+                ...state,
+                player: {},
+                players: action.payload,
+                isLoading: false,
+                error: ''
+            }
+        case SET_ALL_PLAYERS:
             return {
                 ...state,
                 player: {},

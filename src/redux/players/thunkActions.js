@@ -1,5 +1,5 @@
 import http from '../../services/httpService';
-import { setPlayer, setPlayers, setIsLoading, setError } from './actions';
+import { setPlayer, setPlayers, setAllPlayers, setIsLoading, setError } from './actions';
 
 const endPoint = `${process.env.REACT_APP_URL}/users`;
 
@@ -24,7 +24,7 @@ export const getAllPlayers = () => dispatch => {
             const totalPages = response.data.total_pages;
             for (let i = 1; i <= totalPages; i++) {
                 http.get(`${endPoint}?page=${i}`)
-                    .then(response => dispatch(setPlayers(response.data.data)))
+                    .then(response => dispatch(setAllPlayers(response.data.data)))
                     .catch(error => dispatch(setError(error.message)))
             }
         })
