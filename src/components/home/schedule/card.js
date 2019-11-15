@@ -8,6 +8,8 @@ const Card = (props) => {
     const { match_id, show, first_player_url, second_player_url, match_date, match_time, first_player_id, second_player_id,
         first_player_last_name, second_player_last_name, match_location, sets, match_has_started } = props.match;
 
+    const players = { first_player_id, first_player_last_name, second_player_id, second_player_last_name };
+
     const [showGames, setShowGames] = useState(false);
 
     const handleClick = () => {
@@ -45,28 +47,24 @@ const Card = (props) => {
                         <span style={{ marginLeft: "20px" }} >Time: </span>{match_time}<br />
                         <span>Location: </span>{match_location}
                     </div>
-                    {match_has_started ?
-                        <div>
-                            <div className="set-table">
-                                <hr />
-                                <SetTable sets={sets} first_player_id={first_player_id} second_player_id={second_player_id} />
-                            </div>
-                            <button onClick={() => handleClick()} className="btn btn-common btn-rm">
-                                {showGames ? 'Hide Games' : 'Show Games'}
-                            </button>
-                            {showGames ?
-                                <div className="game-table">
-                                    <hr />
-                                    {sets.map(set =>
-                                        <div key={set.set_number} >
-                                            <h5 className="text-left">Set - {set.set_number}:</h5>
-                                            <GameTable games={set.games} first_player_id={first_player_id} second_player_id={second_player_id} />
-                                        </div>
-                                    )}
-                                </div> : null
-                            }
+                    <div className={match_has_started ? "collapse show" : "collapse"}>
+                        <div className="set-table">
+                            <hr />
+                            <SetTable sets={sets} players={players} />
                         </div>
-                        : null}
+                        <button onClick={() => handleClick()} className="btn btn-common btn-rm">
+                            {showGames ? 'Hide Games' : 'Show Games'}
+                        </button>
+                        <div className={showGames ? "game-table collapse show" : "game-table collapse"}>
+                            <hr />
+                            {sets.map(set =>
+                                <div key={set.set_number} >
+                                    <h5 className="text-left">Set - {set.set_number}:</h5>
+                                    <GameTable games={set.games} players={players} />
+                                </div>
+                            )}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div >

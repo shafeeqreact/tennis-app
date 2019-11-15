@@ -1,11 +1,13 @@
 import React from 'react';
 
-const SetTable = ({ sets, first_player_id, second_player_id }) => {
+const SetTable = ({ sets, players }) => {
+    const { first_player_id, first_player_last_name, second_player_id, second_player_last_name } = players;
+
     return (
         <table className="table table-bordered">
             <tbody>
                 <tr>
-                    <th className="text-left">Federer</th>
+                    <th className="text-left">{first_player_last_name}</th>
                     {sets.map(set =>
                         <td key={set.set_number}>
                             {set.winner_player_id === first_player_id ? <strong>{set.first_player_games_won}</strong> : set.first_player_games_won}
@@ -14,7 +16,7 @@ const SetTable = ({ sets, first_player_id, second_player_id }) => {
                     )}
                 </tr>
                 <tr>
-                    <th className="text-left">Nadal</th>
+                    <th className="text-left">{second_player_last_name}</th>
                     {sets.map(set =>
                         <td key={set.set_number}>
                             {set.winner_player_id === second_player_id ? <strong>{set.second_player_games_won}</strong> : set.second_player_games_won}
