@@ -2,11 +2,9 @@ import React, { useState } from 'react';
 import SetTable from './setTable';
 import GameTable from './gameTable';
 
-const Card = (props) => {
-    const { round_id } = props;
-
+const Card = ({ round_id, match }) => {
     const { match_id, show, first_player_url, second_player_url, match_date, match_time, first_player_id, second_player_id,
-        first_player_last_name, second_player_last_name, match_location, sets, match_has_started } = props.match;
+        first_player_last_name, second_player_last_name, match_location, sets, match_has_started } = match;
 
     const players = { first_player_id, first_player_last_name, second_player_id, second_player_last_name };
 

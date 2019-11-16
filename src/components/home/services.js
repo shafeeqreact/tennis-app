@@ -1,18 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
+import PreLoader from '../common/preLoader';
+import SectionHeader from '../common/sectionHeader';
 
 const Services = () => {
+    const data = useSelector(state => state.schedule);
+    const { isLoading, error, tournament } = data;
+
+    if (isLoading)
+        return <PreLoader />
+
+    if (error)
+        return <div className="col-sm-12 col-md-12 col-lg-12">Something went wrong!! {error}</div>
+
     return (
         <section id="services" className="services section-padding">
             <div className="container">
-                <div className="row">
-                    <div className="col-12">
-                        <div className="section-title-header text-center">
-                            <h1 className="section-title wow fadeInUp" data-wow-delay="0.2s">Why You Choose Us?</h1>
-                            <p className="wow fadeInDown" data-wow-delay="0.2s">Global Grand Event on Digital Design</p>
-                        </div>
-                    </div>
-                </div>
+                <SectionHeader
+                    name="Why You Should Play?"
+                    tagline1={`Grand Event of the ${tournament.tourney_name} Tournament`}
+                />
                 <div className="row services-wrapper">
                     <div className="col-md-6 col-lg-4 col-xs-12 padding-none">
                         <div className="services-item wow fadeInDown" data-wow-delay="0.2s">

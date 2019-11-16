@@ -1,22 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-
-import { getPlayers } from '../../redux';
+import { useSelector } from 'react-redux';
 
 import PreLoader from '../common/preLoader';
 import SectionHeader from '../common/sectionHeader';
 
 const Team = (props) => {
-    const players = useSelector(state => state.players.players);
-    const isLoading = useSelector(state => state.players.isLoading);
-    const error = useSelector(state => state.players.error);
-
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(getPlayers());
-    }, [dispatch]);
+    const { isLoading, error, players } = useSelector(state => state.players);
 
     return (
         <section id="team" className="section-padding text-center">
@@ -46,7 +36,7 @@ const Team = (props) => {
                                     </div>
                                     <div className="info-text">
                                         <h3>{player.first_name}</h3>
-                                        <p>Current Rank - {player.id}</p>
+                                        <p>Rank - {player.id}</p>
                                     </div>
                                 </div>
                             </div>

@@ -1,5 +1,7 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { getPlayers, getTournament } from '../../redux';
 
 import Header from './header';
 import Countdown from './countdown';
@@ -23,6 +25,14 @@ import GoToTop from './goToTop';
 
 const Home = (props) => {
     const tourney_has_started = useSelector(state => state.schedule.tournament.tourney_has_started);
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getTournament());
+        dispatch(getPlayers());
+    }, [])
+
     return (
         <React.Fragment>
             <Header />
