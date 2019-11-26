@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
@@ -10,8 +11,11 @@ const Navbar = () => {
                         <span className="icon-menu"></span>
                         <span className="icon-menu"></span>
                         <span className="icon-menu"></span>
+                        <span className="icon-menu"></span>
+                        <span className="icon-menu"></span>
+                        <span className="icon-menu"></span>
                     </button>
-                    <a href="index.html" className="navbar-brand"><img src="assets/img/logo.png" alt="" /></a>
+                    <Link to="/" className="navbar-brand"><img src="assets/img/logo.png" alt="" /></Link>
                 </div>
                 <div className="collapse navbar-collapse" id="main-navbar">
                     <ul className="navbar-nav mr-auto w-100 justify-content-end">
@@ -28,20 +32,17 @@ const Navbar = () => {
                 </div>
             </div>
 
-            {/* <!-- Mobile Menu Start --> */}
             <ul className="mobile-menu">
                 <li><a className="page-scrool" href="#header-wrap">Home</a></li>
                 <li><a className="page-scrool" href="#about">About</a></li>
                 <li><a className="page-scroll" href="#schedules">schedules</a></li>
-                <li><a className="page-scroll" href="#team">Speakers</a></li>
+                <li><a className="page-scroll" href="#team">players</a></li>
                 <li><a className="page-scroll" href="#gallery">Gallery</a></li>
                 <li><a className="page-scroll" href="#faq">Faq</a></li>
                 <li><a className="page-scroll" href="#sponsors">Sponsors</a></li>
                 <li><a className="page-scroll" href="#pricing">pricing</a></li>
                 <li><a className="page-scroll" href="#google-map-area">Contact</a></li>
             </ul>
-            {/* <!-- Mobile Menu End --> */}
-
         </nav>
     );
 }

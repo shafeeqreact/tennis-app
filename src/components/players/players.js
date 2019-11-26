@@ -8,13 +8,6 @@ import PreLoader from '../common/preLoader';
 const Players = (props) => {
     const { isLoading, error, players } = useSelector(state => state.players);
 
-    const social_networks = [
-        { type: 'facebook', link: 'https://www.facebook.com' },
-        { type: 'twitter', link: 'https://www.twitter.com' },
-        { type: 'linkedin', link: 'https://www.linkedin.com' },
-        { type: 'behance', link: 'https://www.behance.com' }
-    ]
-
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -47,8 +40,8 @@ const Players = (props) => {
                                     <div className="team-overlay">
                                         <div className="overlay-social-icon text-center">
                                             <ul className="social-icons">
-                                                {social_networks.map(sn =>
-                                                    <li><a href={sn.link}><i className={`lni-${sn.type}-filled`} aria-hidden="true"></i></a></li>
+                                                {player.social_networks.map(sn =>
+                                                    <li key={sn._id} ><a href={sn.link}><i className={`lni-${sn.type}-filled`} aria-hidden="true"></i></a></li>
                                                 )}
                                             </ul>
                                         </div>
