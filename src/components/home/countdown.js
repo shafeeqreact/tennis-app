@@ -7,7 +7,7 @@ import PreLoader from '../common/preLoader';
 
 const Countdown = () => {
     const { isLoading, error, tournament } = useSelector(state => state.schedule);
-    const { tourney_has_started, tourney_start_date } = tournament;
+    const { tourney_start_date } = tournament;
 
     let startMonth = new Date().getMonth() + 2;
     let startDay = new Date().getDay();
@@ -20,7 +20,7 @@ const Countdown = () => {
         startYear = array[2];
     }
 
-    const remTime = useCountdownTimer(startYear, startMonth, startDay);
+    const { days, hours, minutes, seconds } = useCountdownTimer(startYear, startMonth, startDay);
 
     if (isLoading)
         return <PreLoader />
@@ -28,7 +28,7 @@ const Countdown = () => {
     if (error)
         return null;
 
-    if (tourney_has_started)
+    if (days < 0 || hours < 0 || minutes < 0 || seconds < 0)
         return null;
 
     return (
@@ -43,10 +43,10 @@ const Countdown = () => {
                     <div className="col-md-12 col-sm-12 col-xs-12">
                         <div className="row time-countdown justify-content-center wow fadeInUp" data-wow-delay="0.2s">
                             <div className="time-count">
-                                <div className="time-entry days">{remTime.days ? <span>{remTime.days}</span> : <span>0</span>} Days</div>
-                                <div className="time-entry hours">{remTime.hours ? <span>{remTime.hours}</span> : <span>0</span>} Hours</div>
-                                <div className="time-entry minutes">{remTime.minutes ? <span>{remTime.minutes}</span> : <span>0</span>} Minutes</div>
-                                <div className="time-entry seconds">{remTime.seconds ? <span>{remTime.seconds}</span> : <span>0</span>} Seconds</div>
+                                <div className="time-entry days">{days ? <span>{days}</span> : <span>0</span>} Days</div>
+                                <div className="time-entry hours">{hours ? <span>{hours}</span> : <span>0</span>} Hours</div>
+                                <div className="time-entry minutes">{minutes ? <span>{minutes}</span> : <span>0</span>} Minutes</div>
+                                <div className="time-entry seconds">{seconds ? <span>{seconds}</span> : <span>0</span>} Seconds</div>
                             </div>
                         </div>
                         {/* <a href="pricing.html" className="btn btn-common wow fadeInUp" data-wow-delay="0.3s">Add to My Calender</a> */}

@@ -10,6 +10,9 @@ const Counter = () => {
     if (isLoading)
         return <PreLoader />
 
+    if (error)
+        return null;
+
     return (
         <section className="counter-section section-padding">
             <div className="container">

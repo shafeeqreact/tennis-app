@@ -192,12 +192,12 @@
   .countdown-timer .heading-count h4 {
     font-size: 12px;
   }
-  .schedule .card-body {
+  /* .schedule .card-body {
     padding: 15px;
   }
   .schedule .schedule-tab-title .nav-tabs .nav-link {
     width: 288px;
-  }
+  } */
   .accordion .header-title {
     font-size: 11px;
   }
@@ -251,6 +251,33 @@
   .padding-none:nth-child(5) {
     border-bottom: 1px solid #ddd;
   }
+  .time-entry {
+    margin: 10px;
+    min-width: 60px;
+    height: 60px;
+    padding: 5px;
+    font-size: 8px;
+  }  
+  .time-entry span {
+    font-size: 25px;
+    line-height: 15px;
+    margin-bottom: 0px;
+    margin-top: 15px;
+  }  
+  /* .schedule .schedule-tab-title .nav-tabs {
+    transform: rotate(270deg);
+  }
+  .schedule .schedule-tab-title .nav-tabs .nav-link {
+    min-height: 20px;
+    width: 180px;
+  }
+  .schedule .schedule-tab-title .nav-tabs .nav-link .item-text h4,h5 {
+    margin:0px;
+    padding:0px;
+  }
+  .schedule .schedule-tab-title .nav-tabs .nav-link .item-text h5 {
+    display: none;
+  } */
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
@@ -279,4 +306,18 @@
     padding: 5px 7px;
     font-size: 13px;
   }
+  /* .schedule .schedule-tab-title .nav-tabs {
+    transform: rotate(270deg);
+  }
+  .schedule .schedule-tab-title .nav-tabs .nav-link {
+    min-height: 20px;
+    width: 180px;
+  }
+  .schedule .schedule-tab-title .nav-tabs .nav-link .item-text h4,h5 {
+    margin:0px;
+    padding:0px;
+  }
+  .schedule .schedule-tab-title .nav-tabs .nav-link .item-text h5 {
+    display: none;
+  } */
 }

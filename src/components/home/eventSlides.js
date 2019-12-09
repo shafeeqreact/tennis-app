@@ -17,8 +17,7 @@ const EventSlides = () => {
                         </div>
                     </div>
                     <div className="col-md-6 col-lg-6 col-xs-12 wow fadeInLeft" data-wow-delay="0.3s">
-                        <p className="intro-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.
-              </p>
+                        <p className="intro-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
                         <h2 className="intro-title">Check List</h2>
                         <ul className="list-specification">
                             <li><i className="lni-check-mark-circle"></i> Lorem Ipsum is simply dummy</li>

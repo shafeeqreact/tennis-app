@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getAllPlayers } from '../../redux';
 
 import PreLoader from '../common/preLoader';
+import SectionHeader from '../common/sectionHeader';
 
 const Players = (props) => {
     const { isLoading, error, players } = useSelector(state => state.players);
@@ -23,14 +24,10 @@ const Players = (props) => {
     return (
         <section id="team" className="section-padding text-center">
             <div className="container">
-                <div className="row">
-                    <div className="col-12">
-                        <div className="section-title-header text-center">
-                            <h1 className="section-title wow fadeInUp" data-wow-delay="0.2s">Who's Playing?</h1>
-                            <p className="wow fadeInDown" data-wow-delay="0.2s">World's Top Tennis Players</p>
-                        </div>
-                    </div>
-                </div>
+                <SectionHeader
+                    name="Who's Playing?"
+                    tagline1="World's Top Tennis Players"
+                />
                 <div className="row">
                     {players.map(player =>
                         <div onClick={() => props.history.push(`/players/${player.id}`)} key={player.id} className="col-sm-6 col-md-6 col-lg-4">
