@@ -1,5 +1,5 @@
 import http from '../../services/httpService';
-import { setPlayer, setPlayers, setAllPlayers, setIsLoading, setError } from './actions';
+import { setPlayer, setTop6Players, setAllPlayers, setIsLoading, setError } from './actions';
 
 const endPoint = `${process.env.REACT_APP_URL}/users`;
 
@@ -10,10 +10,10 @@ export const getPlayer = (id) => dispatch => {
         .catch(error => dispatch(setError(error.message)))
 }
 
-export const getPlayers = () => dispatch => {
+export const getTop6Players = () => dispatch => {
     dispatch(setIsLoading());
     http.get(endPoint)
-        .then(response => dispatch(setPlayers(response.data.data)))
+        .then(response => dispatch(setTop6Players(response.data.data)))
         .catch(error => dispatch(setError(error.message)))
 }
 

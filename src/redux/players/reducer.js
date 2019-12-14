@@ -1,12 +1,24 @@
-import { SET_PLAYER, SET_PLAYERS, SET_ALL_PLAYERS, SET_IS_LOADING, SET_ERROR } from "./types";
+import { SET_PLAYER, SET_TOP_6_PLAYERS, SET_ALL_PLAYERS, SET_IS_LOADING, SET_ERROR } from "./types";
 
 const initialState = {
+    headerImages: [],
     player: {},
     players: [],
     isLoading: true,
     error: ''
 }
 
+// temporary code
+const images = [
+    { _id: 1, link: 'assets/img/slider/rfederer.jpg' },
+    { _id: 2, link: 'assets/img/slider/swilliams.jpg' },
+    { _id: 3, link: 'assets/img/slider/rnadal.jpg' },
+    { _id: 4, link: 'assets/img/slider/msharapova.jpg' },
+    { _id: 5, link: 'assets/img/slider/ndjokovic.jpg' },
+    { _id: 6, link: 'assets/img/slider/shalep.jpg' },
+]
+
+// temporary code
 const social_networks = [
     { _id: 1, type: 'facebook', link: 'https://www.facebook.com' },
     { _id: 2, type: 'twitter', link: 'https://www.twitter.com' },
@@ -23,14 +35,15 @@ export const reducer = (state = initialState, action) => {
             }
             return {
                 ...state,
+                headerImages: [],
                 // player: action.payload,
                 player: player,
                 players: [],
                 isLoading: false,
                 error: ''
             }
-        case SET_PLAYERS:
-            const players = action.payload.map(player => {
+        case SET_TOP_6_PLAYERS:
+            const top6Players = action.payload.map(player => {
                 return {
                     ...player,
                     social_networks
@@ -38,9 +51,11 @@ export const reducer = (state = initialState, action) => {
             })
             return {
                 ...state,
+                // headerImages:action.payload.images,
+                headerImages: images,
                 player: {},
                 // players: action.payload,
-                players: players,
+                players: top6Players,
                 isLoading: false,
                 error: ''
             }
@@ -53,6 +68,7 @@ export const reducer = (state = initialState, action) => {
             })
             return {
                 ...state,
+                headerImages: [],
                 player: {},
                 // players: [...state.players, ...action.payload],
                 players: [...state.players, ...allPlayers],
@@ -62,6 +78,7 @@ export const reducer = (state = initialState, action) => {
         case SET_IS_LOADING:
             return {
                 ...state,
+                headerImages: [],
                 player: {},
                 players: [],
                 isLoading: true,
@@ -70,6 +87,7 @@ export const reducer = (state = initialState, action) => {
         case SET_ERROR:
             return {
                 ...state,
+                headerImages: [],
                 player: {},
                 players: [],
                 isLoading: false,

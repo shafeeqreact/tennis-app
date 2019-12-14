@@ -1,4 +1,4 @@
-import { SET_PLAYER, SET_PLAYERS, SET_ALL_PLAYERS, SET_IS_LOADING, SET_ERROR } from "./types"
+import { SET_PLAYER, SET_TOP_6_PLAYERS, SET_ALL_PLAYERS, SET_IS_LOADING, SET_ERROR } from "./types"
 
 export const setPlayer = (data) => {
     return {
@@ -7,9 +7,9 @@ export const setPlayer = (data) => {
     }
 }
 
-export const setPlayers = (data) => {
+export const setTop6Players = (data) => {
     return {
-        type: SET_PLAYERS,
+        type: SET_TOP_6_PLAYERS,
         payload: data
     }
 }

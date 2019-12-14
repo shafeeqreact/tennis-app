@@ -2204,6 +2204,12 @@ a.back-to-top:hover, a.back-to-top:focus {
   right: 15px;
 }
 
+#main-slide img {
+  width: auto;
+  height: 864px;
+  overflow: hidden;
+}
+
 .carousel-indicators li {
   width: 12px;
   height: 12px;

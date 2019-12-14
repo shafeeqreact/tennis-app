@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { getPlayers, getTournament } from '../../redux';
+import { getTop6Players, getTournament } from '../../redux';
 
 import Header from './header';
 import Countdown from './countdown';
@@ -28,7 +28,7 @@ const Home = (props) => {
 
     useEffect(() => {
         dispatch(getTournament());
-        dispatch(getPlayers());
+        dispatch(getTop6Players());
     }, [])
 
     return (
